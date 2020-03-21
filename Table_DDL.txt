@@ -1,0 +1,21 @@
+
+
+MariaDB [(none)]> create database taoiseachDB;
+MariaDB [(none)]> grant all on taoiseachDB.* to 'taoiuser' identified by 'taoipasswd';
+MariaDB [(none)]> flush privileges;
+MariaDB [(none)]> quit
+
+mysql -u taoiuser -p taoiseachDB
+
+MariaDB [taoiseachDB]> create table taoiseach(
+				  ID int Primary Key auto_increment,
+				  Name varchar(64),
+				  Constituency varchar(64),
+				  Start_Date datetime,
+				  End_Date  datetime,
+				  Party varchar(64),
+				  Term varchar(8),
+				  Council varchar(16),
+				  Vice_President varchar(64),
+				  Elected int,
+				  DOB datetime) ;
